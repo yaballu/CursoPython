@@ -41,15 +41,16 @@ salvar_carro(**{"marca": "fiat", "modelo": "palio", "ano": 1999, "placa": "ABC-1
 
 # args
 
-def exibir_poema(data_extenso, *args, **kwargs):
-    texto = "\n".join(args)
-    meta_dados = "\n".join([f"{chave.title()}: {valor}" for chave, valor in kwargs.items()])
+def exibir_poema(data_extenso, *lista, **dicionario):
+    texto = "\n".join(lista)
+    meta_dados = "\n".join([f"{chave.title()}: {valor}" for chave, valor in dicionario.items()])
     mensagem = f"{data_extenso}\n\n{meta_dados}"
     print(mensagem)
 
 exibir_poema("Zen of Python", "Beautiful is better than ugly.", autor="Tim Peters", ano =1999)
 
 exibir_poema(
+    "Sexta-feira, 26 de Agosto de 2023"
     "Zen of Python",
     "Beautiful is better than ugly.",
     "Explicit is better than implicit.",
